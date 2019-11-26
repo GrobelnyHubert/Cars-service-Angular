@@ -9,7 +9,8 @@ import {Car} from '../models/car';
   encapsulation: ViewEncapsulation.None
 })
 export class CarsListComponent implements OnInit {
-  totalCost : number;
+  totalCost: number;
+  grossCost: number;
   cars: Car[]  = [
     {
       id: 1,
@@ -56,10 +57,12 @@ export class CarsListComponent implements OnInit {
   ngOnInit() {
     this.CountTotalCost();
   }
-  CountTotalCost() : void
-  {
+  CountTotalCost(): void {
     this.totalCost = this.cars
       .map((car) => car.cost)
       .reduce((prev, next) => prev + next);
+  }
+  onShownGross(grossCost: number): void {
+    this.grossCost = grossCost;
   }
 }
