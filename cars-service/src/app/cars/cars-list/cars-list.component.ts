@@ -1,5 +1,6 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import {Car} from '../models/car';
+import {TotalCostComponent} from '../total-cost/total-cost.component';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -9,6 +10,7 @@ import {Car} from '../models/car';
   encapsulation: ViewEncapsulation.None
 })
 export class CarsListComponent implements OnInit {
+  @ViewChild('totalCostRef', {static: false}) totalCostRef: TotalCostComponent;
   totalCost: number;
   grossCost: number;
   cars: Car[]  = [
@@ -61,6 +63,9 @@ export class CarsListComponent implements OnInit {
     this.totalCost = this.cars
       .map((car) => car.cost)
       .reduce((prev, next) => prev + next);
+  }
+  showGross(): void {
+    this.totalCostRef.showGross();
   }
   onShownGross(grossCost: number): void {
     this.grossCost = grossCost;
