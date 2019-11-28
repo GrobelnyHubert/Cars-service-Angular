@@ -1,6 +1,7 @@
-import { Component, OnInit, Input,EventEmitter, Output} from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'cs-total-cost',
   templateUrl: './total-cost.component.html',
   styleUrls: ['./total-cost.component.less']
