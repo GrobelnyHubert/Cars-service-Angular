@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import {Car} from './models/car';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import {Observable} from 'rxjs';
-import 'rxjs';
-
 
 
 
