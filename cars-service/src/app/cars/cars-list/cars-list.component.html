@@ -1,7 +1,7 @@
 <cs-header>
   <p levels>cars</p>
   <div content>
-    <p>some text</p>
+    <p>List of cars in service</p>
   </div>
 </cs-header>
 <div class="container">
@@ -20,7 +20,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let car of cars; let i = index">
+        <tr *ngFor="let car of cars; let i = index" class="row-car" [routerLink]="['/cars', car.id]">
           <td [ngClass]="{'row-error' : car.isFullyDamaged}">{{car?.model}}</td>
           <td>{{car?.plate}}</td>
           <td>{{car?.deliveryDate}}</td>
