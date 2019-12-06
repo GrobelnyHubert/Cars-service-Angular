@@ -22,4 +22,12 @@ export class CarsService {
     // @ts-ignore
     return this.http.get(this.apiUrl + `/${id}`);
   }
+  addCar(data): Observable<Car> {
+    // @ts-ignore
+    return this.http.post(this.apiUrl, data);
+  }
+  updateCar(id: number, data): Observable<Car> {
+    // @ts-ignore
+    return this.http.put(this.apiUrl + `/${id}`, data);
+  }
 }
