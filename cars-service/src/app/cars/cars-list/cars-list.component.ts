@@ -61,6 +61,12 @@ export class CarsListComponent implements OnInit {
       this.loadCars();
     });
   }
+  removeCar(car: Car, event) {
+    event.stopPropagation();
+    this.carsService.deleteCar(car.id).subscribe(() => {
+      this.loadCars();
+    });
+  }
   CountTotalCost(): void {
     this.totalCost = this.cars
       .map((car) => car.cost)

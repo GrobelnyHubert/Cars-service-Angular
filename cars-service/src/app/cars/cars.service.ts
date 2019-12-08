@@ -30,4 +30,8 @@ export class CarsService {
     // @ts-ignore
     return this.http.put(this.apiUrl + `/${id}`, data);
   }
+  deleteCar(id: number): Observable<Car> {
+    // @ts-ignore
+    return this.http.delete(this.apiUrl + `/${id}`);
+  }
 }
